@@ -42,7 +42,7 @@ app.get(routes.app, function(req, res) {
 		lang: req.headers["accept-language"].split(",")[0].replace("-", "_")
 	};
 
-	API.getApp(options, function(json) {
+	API.getApp(options, function(error, json) {
 		res.end(json);
 	});
 });

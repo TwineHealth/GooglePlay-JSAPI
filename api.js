@@ -17,9 +17,12 @@ module.exports = {
 				var scraper = require('./scrapers/app');
 				var data = scraper.parse(chunk);
 				if (typeof callback == 'function') {
-					callback(JSON.stringify(data));
+					return callback(error, JSON.stringify(data));
 				}
 			}
+            if (typeof callback == 'function') {
+                return callback(error);
+            }
 		});
 	},
 	/**
