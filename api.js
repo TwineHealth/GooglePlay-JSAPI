@@ -12,10 +12,10 @@ module.exports = {
 	getApp: function (config, callback) {
 		var basePath = "https://play.google.com/store/apps/details?id=";
 
-		request(basePath+config.appID, function (error, res, chunk) {
+		request(basePath + config.appID, function (error, res, chunk) {
 			if (!error && res.statusCode == 200) {
 				var scraper = require('./scrapers/app');
-				var data = scraper.parse(chunk);
+				var data = scraper.parse(chunk, config.appID);
 				if (typeof callback == 'function') {
 					return callback(error, JSON.stringify(data));
 				}
