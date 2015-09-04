@@ -30,11 +30,11 @@ module.exports = {
 		var wrapper = $('.details-wrapper ');
 
 		var r_icon = wrapper.find(".cover-image").attr("src");
-		var r_name = wrapper.find(".document-title[itemprop=name]").text();
-		var r_description = wrapper.find("[itemprop=description]").text();
-		var r_author = wrapper.find("[itemprop=author] [itemprop=name]").text();
+		var r_name = wrapper.find(".document-title[itemprop=name]").text().trim();
+		var r_description = wrapper.find("[itemprop=description]").text().trim();
+		var r_author = wrapper.find("[itemprop=author] [itemprop=name]").text().trim();
 		var r_authorURL = wrapper.find(".meta-info .dev-link").attr("href");
-		var r_price = wrapper.find(".details-actions button.price").text();
+		var r_price = wrapper.find(".details-actions button.price").text().trim();
 
 		// User amount or localized string
 		if (r_price.match(/\d+/g)) {
@@ -53,11 +53,11 @@ module.exports = {
 		});
 
 		// Technical metadata
-		var r_supportedDevices = wrapper.find("[itemprop=operatingSystems]").text();
-		var r_primaryGenreName = wrapper.find("[itemprop=genre]").text();
-		var r_version = wrapper.find("[itemprop=softwareVersion]").text();
-		var r_numDownloads = wrapper.find("[itemprop=numDownloads]").text();
-		var r_fileSize = wrapper.find("[itemprop=fileSize]").text();
+		var r_supportedDevices = wrapper.find("[itemprop=operatingSystems]").text().trim();
+		var r_primaryGenreName = wrapper.find("[itemprop=genre]").text().trim();
+		var r_version = wrapper.find("[itemprop=softwareVersion]").text().trim();
+		var r_numDownloads = wrapper.find("[itemprop=numDownloads]").text().trim();
+		var r_fileSize = wrapper.find("[itemprop=fileSize]").text().trim();
 
 		return {
 			icon: r_icon,
