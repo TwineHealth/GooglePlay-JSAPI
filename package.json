@@ -26,9 +26,9 @@
   },
   "dependencies": {
     "util": "0.x",
-    "express": "3.x",
+    "express": "4.x",
     "request": "2.x",
-    "logfmt": "0.x",
+    "logfmt": "1.x",
     "cheerio": "0.x"
   }
 }
